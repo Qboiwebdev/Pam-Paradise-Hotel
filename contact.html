@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pam Paradise Hotel </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./Asset/logo.PNG" alt="">
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="room.html">Rooms</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-btn" id="menuBtn">☰</div>
+    </header>
+    <div class="backgroundimage">
+        <div class="backgroundtext">
+            <h1>Contact Us</h1>
+            <P>We'd love to hear from you. Get in touch today.</P>
+        </div>
+    </div>
+    <main>
+        <h2 data-aos="fade-up">Get in touch</h2>
+        <form action="" id="contact-form" data-aos="zoom-in-up">
+            <div class="name">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="textarea">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Write your Message"></textarea>
+            </div>
+            
+            <button type="submit" id="sendBtn">
+                <span id="btnText">Send message</span>
+                <div class="loader" id="loader" style="display: none"></div>   
+            </button>
+        </form>
+    </main>
+    <footer>
+        <div class="divfooter" data-aos="fade-up">
+            <div class="footer1">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="room.html">Rooms</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer2">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: <span>fataiqoweeypamilerin</span></li>
+                    <li>Phone: <span>08117447150</span></li>
+                    <li>Open 24/7 &bullet; Always at your service</li>
+                </ul>
+            </div>
+        </div>
+        <div class="divfooter2">
+            <p>© 2026 Hotel Paradise. All Rights Reserved.</p>
+        </div>
+    </footer>  
+
+    <a href="https://wa.me/2348130975590" target="_blank" class="whatsapp-btn" id="whatsapp-btn">
+        <img src="./Asset/whatsapp icon.jpg" alt="">
+    </a>
+
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+    emailjs.init("hysNc4ps1cqxY5Fzm");
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const loader = document.getElementById("loader");
+  const sendBtn = document.getElementById("sendBtn");
+  const btnText = document.getElementById("btnText");
+
+  const params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  };
+
+  loader.style.display = "block";
+  btnText.style.visibility = "hidden";
+  sendBtn.disabled = true;
+  sendBtn.style.opacity = "0.9"; //
+
+  Promise.all([
+    emailjs.send("service_ei634gg", "template_6xbznyv", params),
+    emailjs.send("service_ei634gg", "template_kqsw70w", params)
+  ])
+  .then(() => {
+    loader.style.display = "none";
+    btnText.style.visibility = "visible";
+    sendBtn.disabled = false;
+    sendBtn.style.cursor = "pointer"; // JS resets cursor
+    sendBtn.style.opacity = "1";
+    alert("🎉 Contact successful ✅");
+    document.getElementById("contact-form").reset();
+  })
+  .catch((error) => {
+    loader.style.display = "none";
+    btnText.style.visibility = "visible";
+    sendBtn.disabled = false;
+    sendBtn.style.opacity = "1";
+    alert("❌ Failed to send. Try again.");
+    console.log(error);
+  });
+});
+</script>
+</body>
+</html>
