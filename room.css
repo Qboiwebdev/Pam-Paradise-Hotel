@@ -220,8 +220,6 @@ main h2{
     height: 480px;
     display: flex;
     align-items: center;
-    overflow: visible;
-    scrollbar-width: none;
 }
 .ima-anchor{
     width: 40%;
@@ -260,6 +258,7 @@ form{
     overflow-y: auto;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
 }
 form h3{
     font-family: "Cinzel", serif;
