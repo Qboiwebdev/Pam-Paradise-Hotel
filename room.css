@@ -248,7 +248,7 @@ form{
     background: #cdb4db;
     width: 60%;
     height: 100%;
-    padding: 20px 10px;
+    padding: 0px 10px;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -273,7 +273,7 @@ form label{
     text-shadow: 0 0 2px #a855f7,0 0 5px #a855f7;
     text-align: center;
 }
-.name, .email, .guest, .checkin, .checkout{
+.name, .email, .guest{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -284,9 +284,15 @@ form input{
     font-weight: 600;
     padding: 10px;
     border: 1px solid purple;
-    box-sizing: border-box;
     background: #cdb4db;
-    width: 100%;
+}
+.checkin, .checkout{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+}
+input[type="date"]{
+    width: 100% !important;
 }
 form input:focus{
     outline: 2px solid purple;
