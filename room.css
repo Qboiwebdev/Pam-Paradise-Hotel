@@ -220,7 +220,7 @@ main h2{
     height: 480px;
     display: flex;
     align-items: center;
-    overflow-y: auto;
+    overflow: visible;
     scrollbar-width: none;
 }
 .ima-anchor{
@@ -259,6 +259,7 @@ form{
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     overflow-y: auto;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 }
 form h3{
     font-family: "Cinzel", serif;
