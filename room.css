@@ -279,13 +279,13 @@ form label{
     width: 100%;
 }
 form input{
-    height: 40px;
     color: purple;
     font-size: 15px;
     font-weight: 600;
+    padding: 10px;
     border: 1px solid purple;
+    box-sizing: border-box;
     background: #cdb4db;
-    padding: 0px 10px;
     width: 100%;
 }
 form input:focus{
