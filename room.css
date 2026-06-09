@@ -248,7 +248,7 @@ form{
     background: #cdb4db;
     width: 60%;
     height: 100%;
-    padding: 0px 10px;
+    padding: 30px 10px;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -289,10 +289,8 @@ form input{
 .checkin, .checkout{
     display: flex;
     flex-direction: column;
-    width: 100% !important;
-}
-input[type="date"]{
-    width: 100% !important;
+    width: 100%;
+    border: 2px solid red;
 }
 form input:focus{
     outline: 2px solid purple;
@@ -452,7 +450,7 @@ footer{
         height: auto;
     }
     .paylog a{
-        top: 25px;
+        top: 38px;
     }
     form{
         width: 100%;
@@ -481,9 +479,6 @@ footer{
     .divfooter{
         padding: 50px 20px;
     }
-    .paylog a{
-        right: 35px;
-    }
     main h2{
         font-size: 25px;
     }
@@ -511,7 +506,7 @@ footer{
         display: flex;
     }
     .paylog a{
-        right: 15px;
+        right: 13px;
     }
 }
 @media (max-width: 200px) {
