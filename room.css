@@ -287,6 +287,7 @@ form input{
 input[type="date"] {
     width: 100%;
     min-width: 100%;
+    min-height: auto;
     display: block;
     box-sizing: border-box;
     -webkit-appearance: none;
