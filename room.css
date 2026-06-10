@@ -278,7 +278,9 @@ form input{
     color: purple;
     font-size: 15px;
     font-weight: 600;
-    padding: 10px;
+    padding: 0px 10px;
+    height: 40px;
+    min-height: 40px;
     background: #cdb4db;
     border: none;
     outline: none;
@@ -287,7 +289,8 @@ form input{
 input[type="date"] {
     width: 100%;
     min-width: 100%;
-    min-height: auto;
+    height: 40px;
+    min-height: 40px;
     display: block;
     box-sizing: border-box;
     -webkit-appearance: none;
