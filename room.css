@@ -284,6 +284,14 @@ form input{
     outline: none;
     border-bottom: 2px solid purple;
 }
+input[type="date"] {
+    width: 100%;
+    min-width: 100%;
+    display: block;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
 .checkin, .checkout{
     display: flex;
     flex-direction: column;
