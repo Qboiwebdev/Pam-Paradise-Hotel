@@ -264,7 +264,7 @@ form h3{
     text-align: center;
 }
 form label{
-    font-size: 16px;
+    font-size: 17px;
     color: purple;
     text-shadow: 0 0 2px #a855f7,0 0 5px #a855f7;
     text-align: center;
@@ -279,16 +279,15 @@ form input{
     font-size: 15px;
     font-weight: 600;
     padding: 10px;
-    border: 1px solid purple;
     background: #cdb4db;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid purple;
 }
 .checkin, .checkout{
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-form input:focus{
-    outline: 2px solid purple;
 }
 input::placeholder{
     color: purple;
@@ -302,11 +301,14 @@ form button{
     font-family: "Cinzel", serif;
     font-size: 20px;
     font-weight: 600;
-    border: 1px solid purple;
+    border: 2px solid purple;
     text-shadow: 0 0 2px #a855f7,0 0 5px #a855f7;
     color: purple;
-    padding: 8px 0px;
+    padding: 5px 5px;
     background: #cdb4db;
+    width: fit-content;
+    align-self: center;
+    border-radius: 20px;
 }
 footer{
     background:  #1f2937;
