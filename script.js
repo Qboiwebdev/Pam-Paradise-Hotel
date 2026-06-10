@@ -1,13 +1,16 @@
 const menuBtn = document.getElementById("menuBtn");
 const navbar = document.getElementById("navbar");
+
 menuBtn.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-    if(navbar.classList.contains("active"))  {
-        menuBtn.innerHTML = "⨉"
-    }else{
-        menuBtn.innerHTML = "☰"
-    }
+  navbar.classList.toggle("active");
+
+  if (navbar.classList.contains("active")) {
+    menuBtn.innerHTML = "⨉";
+  } else {
+    menuBtn.innerHTML = "☰";
+  }
 });
+
 
 function getNights(i) {
   const start = new Date(document.getElementById("checkin" + i).value);
@@ -19,6 +22,13 @@ function getNights(i) {
   return nights > 0 ? nights : 1;
 }
 
+
+function resetRoom(i) {
+  const form = document.querySelector("#ggg" + i + " #paymentform");
+  if (form) form.reset();
+}
+
+
 function payWithPaystack(pricePerNight, i) {
 
   const bookingCode = 'BK' + Math.floor(Math.random() * 1000000);
@@ -26,8 +36,6 @@ function payWithPaystack(pricePerNight, i) {
   const name = document.getElementById("name" + i).value;
   const email = document.getElementById("email" + i).value;
   const guests = document.getElementById("guests" + i).value;
-  const checkin = document.getElementById("checkin" + i).value;
-  const checkout = document.getElementById("checkout" + i).value;
 
   if (guests < 1 || guests > 10) {
     alert("Guests must be between 1 and 10");
@@ -48,8 +56,6 @@ function payWithPaystack(pricePerNight, i) {
       custom_fields: [
         { display_name: "Name", value: name },
         { display_name: "Guests", value: guests },
-        { display_name: "Check-in", value: checkin },
-        { display_name: "Check-out", value: checkout },
         { display_name: "Nights", value: nights },
         { display_name: "Room Price", value: pricePerNight },
         { display_name: "Total", value: total },
@@ -64,31 +70,15 @@ function payWithPaystack(pricePerNight, i) {
       );
 
       console.log("Booking Code:", bookingCode, "| Ref:", response.reference);
-
-      const form = document.querySelector("#ggg" + i + " .paymentform");
-      if (form) {
-        form.reset();
-      }
-
-
-      const modal = document.getElementById("ggg" + i);
-      if (modal) {
-        modal.style.display = "none";
-      }
+      resetRoom(i);
+      window.location.hash = "ff" + i;
     },
 
     onClose: function () {
+
       alert("Booking not confirmed ❌");
 
-      const form = document.querySelector("#ggg + i + .paymentform")
-      if (form) {
-        form.reset();
-      }
-
-      const modal = document.getElementById("ggg" + i)
-      if(modal) {
-        modal.style.display = "n"
-      }
+      resetRoom(i);
     }
 
   });
@@ -96,6 +86,8 @@ function payWithPaystack(pricePerNight, i) {
   handler.openIframe();
 }
 
-const phone = "2348130975590"
+
+const phone = "2348130975590";
 const msg = "Hello 🏨 \n\nI'd like to book/inquire:\n1. Room type: \n2. Check-in date: \n3. Check-out date: \n4. Nights: \n5. No. of guests: \n\nThank you!";
-document.getElementById("whatsapp-btn").href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
+document.getElementById("whatsapp-btn").href =
+  "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
