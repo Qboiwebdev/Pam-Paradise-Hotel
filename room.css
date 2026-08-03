@@ -276,16 +276,15 @@ main h2{
 .wrapper{
     position: fixed;
     background: rgba(167, 170, 170, 0.428);
-    height: 100%;
-    width: 100%;
     inset: 0;
     display: none;
 }
 .paylog{
-    position: absolute;
-    left: 50%;
-    top: 53%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    margin: auto;
     width: 50%;
     height: 480px;
     display: flex;
