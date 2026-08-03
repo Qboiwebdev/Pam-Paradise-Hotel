@@ -27,7 +27,7 @@
             </ul>
         </nav>
         <div class="search-btn" id="searchBtn">
-            <span>🔍</span>
+            <a href="#main">🔍</a>
         </div>
         <div class="menu-btn" id="menuBtn">☰</div>
     </header>
@@ -35,10 +35,10 @@
         <div class="backgroundtext">
             <h1>Experience Comfort in Every Room</h1>
             <P>Each room is carefully designed to combine luxury, relaxation, and convenience for an unforgettable experience.</P>
-            <button>Book now</button>
+            <a href="#main">Book now</a>
         </div>
     </div>
-    <main>
+    <main id="main">
         <h2 data-aos="fade-up">Our Rooms</h2>
         <div class="search-container" id="searchContainer">
             <div class="search-input-box">
@@ -46,7 +46,7 @@
                 <input type="text" id="searchInput" placeholder="Search rooms...">
                 <button id="closeBtn">✕</button>
             </div>
-        <div id="suggestions"></div>
+            <div id="suggestions"></div>
         </div>
         <div class="section">
             <a href="#ggg1" class="rooms" id="ff1" data-aos="zoom-in-up" data-aos-duration="2000">
@@ -57,7 +57,7 @@
                     <div class="label-list">
                         <h3>Room 1</h3>
                         <p>Luxury Paradise Skyline Room</p>
-                        <b>₦100,000<span>/night</span></b>
+                        <b>₦100<span>/night</span></b>
                     </div>
                     <div class="book-now">
                         <button>Book now</button>
@@ -385,7 +385,7 @@
                         <input type="number" id="guests1" min="1" max="10" placeholder="Number of guests" required>
                     </div>
 
-                    <button type="button" onclick="payWithPaystack(100000, 1)">Book now</button>
+                    <button type="button" onclick="payWithPaystack(100, 1)">Book now</button>
                 </form>                                   
             </div>
         </div>
@@ -1118,7 +1118,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/2348130975590" target="_blank" class="whatsapp-btn" id="whatsapp-btn">
+    <a href="https://wa.me/2348165803719" target="_blank" class="whatsapp-btn" id="whatsapp-btn">
         <img src="./Asset/whatsapp icon.jpg" alt="">
     </a>
 
