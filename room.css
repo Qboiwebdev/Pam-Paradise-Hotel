@@ -142,7 +142,6 @@ ul li a:hover::after{
     margin: auto;
     position: relative;
     height: 40px;
-    /* scroll-margin-top: 10px; */
 }
 .search-input-box input{
     width: 100%;
@@ -279,18 +278,19 @@ main h2{
     background: rgba(167, 170, 170, 0.428);
     height: 100%;
     width: 100%;
-    top: 0;
+    inset: 0;
     display: none;
+    align-items: center;
+    justify-content: center;
 }
 .paylog{
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 53%;
     transform: translate(-50%, -50%);
     width: 50%;
     height: 480px;
     display: flex;
-    align-items: center;
 }
 .ima-anchor{
     flex: 0 0 40%;
