@@ -280,11 +280,9 @@ main h2{
     width: 100%;
     inset: 0;
     display: none;
-    align-items: center;
-    justify-content: center;
 }
 .paylog{
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 53%;
     transform: translate(-50%, -50%);
@@ -377,9 +375,9 @@ input::placeholder{
     font-weight: 500;
     transition: 1s ease-in-out;
 }
-form input:focus::placeholder{
+/* form input:focus::placeholder{
     transform: translateY(-10px);
-}
+} */
 form button{
     font-family: "Cinzel", serif;
     font-size: 15px;
