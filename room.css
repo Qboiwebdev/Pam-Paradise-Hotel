@@ -375,9 +375,6 @@ input::placeholder{
     font-weight: 500;
     transition: 1s ease-in-out;
 }
-/* form input:focus::placeholder{
-    transform: translateY(-10px);
-} */
 form button{
     font-family: "Cinzel", serif;
     font-size: 15px;
