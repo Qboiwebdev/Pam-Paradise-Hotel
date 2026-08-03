@@ -7,17 +7,11 @@ menuBtn.addEventListener("click", () => {
   navbar.classList.toggle("active");
 
   if (navbar.classList.contains("active")) {
-
     menuBtn.innerHTML = "⨉";
-
   } else {
-
     menuBtn.innerHTML = "☰";
-
   }
-
 });
-
 
 function getNights(i) {
 
@@ -97,7 +91,7 @@ function payWithPaystack(pricePerNight, i) {
 
   let handler = PaystackPop.setup({
 
-    key: "pk_test_084ec29bb0ddd52605c8eedd784ef0b46a1ebe86",
+    key: "pk_live_7849f7de72347120ae622c4ec281047832232044",
 
     email: email,
 
@@ -155,13 +149,12 @@ function payWithPaystack(pricePerNight, i) {
 
 }
 
-const phone = "2348130975590";
+const phone = "2348165803719";
 const msg =
   "Hello 🏨 \n\nI'd like to book/inquire:\n1. Room type: \n2. Check-in date: \n3. Check-out date: \n4. Nights: \n5. No. of guests: \n\nThank you!";
 document.getElementById("whatsapp-btn").href =
 
   "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
-
 
 
 const searchBtn = document.getElementById("searchBtn");
@@ -180,19 +173,6 @@ searchBtn.addEventListener("click", () => {
     searchContainer.classList.add("active");
     searchBtn.style.display = "none"
 
-    searchContainer.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-    setTimeout(() => {
-      searchContainer.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-      searchInput.focus();
-    }, 100);
 });
 
 
@@ -232,7 +212,6 @@ searchInput.addEventListener("input", function () {
 
     suggestions.innerHTML = "";
 
-    // EMPTY INPUT
     if (value === "") {
 
         rooms.forEach(room => {
@@ -336,7 +315,6 @@ searchInput.addEventListener("input", function () {
             noResultDiv.style.margin = "0 auto";
             noResultDiv.style.width = "100%";
             noResultDiv.style.fontSize = "18px";
-
             section.appendChild(noResultDiv);
         }
     } else {
