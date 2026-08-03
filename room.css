@@ -66,12 +66,12 @@ ul li a:hover::after{
     color:  rgb(147,51,234);
     font-size: 35px;
 }
-.search-btn span{
+.search-btn a{
     font-size: 30px;
 }
 .backgroundimage{
-    height: 100dvh;
-    width: 100dvw;
+    min-height: 100dvh;
+    width: 100%;
     background-image: url(./Asset/Background\ image.jpg);
     background-size: cover;
     background-position: center;
@@ -117,7 +117,7 @@ ul li a:hover::after{
     font-size: 20px;
     font-weight: 400;
 }
-.backgroundimage button{
+.backgroundimage a{
     font-family: "Cinzel", serif;
     font-size: 16px;
     font-weight: 700;
@@ -142,7 +142,7 @@ ul li a:hover::after{
     margin: auto;
     position: relative;
     height: 40px;
-    scroll-margin-top: 120px;
+    /* scroll-margin-top: 10px; */
 }
 .search-input-box input{
     width: 100%;
@@ -277,8 +277,8 @@ main h2{
 .wrapper{
     position: fixed;
     background: rgba(167, 170, 170, 0.428);
-    height: 100dvh;
-    width: 100dvw;
+    height: 100%;
+    width: 100%;
     top: 0;
     display: none;
 }
@@ -305,7 +305,7 @@ main h2{
 .paylog a{
     position: absolute;
     right: 10px;
-    top: 20px;
+    top: 30px;
     font-size: 25px;
     font-weight: 700;
 }
