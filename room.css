@@ -234,6 +234,7 @@ main h2{
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 15px;
 }
 .label-list{
@@ -278,22 +279,26 @@ main h2{
     background: rgba(167, 170, 170, 0.428);
     height: 100%;
     width: 100%;
+    min-width: 100%;
+    min-height: 100%;
     top: 0;
     display: none;
+    z-index: 10;
 }
 .paylog{
     position: absolute;
     left: 50%;
-    top: 53%;
+    top: 57%;
     transform: translate(-50%, -50%);
     width: 50%;
-    height: 480px;
+    min-width: 50%;
     display: flex;
-    align-items: center;
 }
 .ima-anchor{
-    flex: 0 0 40%;
-    height: 100%;
+    width: 40%;
+    min-width: 40%;
+    height: 480px;
+    min-height: 480px;
 }
 .ima-anchor img{
     width: 100%;
@@ -304,7 +309,7 @@ main h2{
 .paylog a{
     position: absolute;
     right: 10px;
-    top: 30px;
+    top: 18px;
     font-size: 25px;
     font-weight: 700;
 }
@@ -316,15 +321,25 @@ main h2{
 }
 form{
     background: #cdb4db;
-    flex: 0 0 60%;
-    height: 100%;
+    width: 60%;
+    min-width: 60%;
+    height: 480px;
+    min-height: 480px;
     padding: 30px 10px;
     display: flex;
-    gap: 10px;
+    gap: 5px;
+    overflow: hidden;
     flex-direction: column;
     border-radius: 0px 10px 10px 0px;
     justify-content: center;
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+form h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: purple;  
+    text-shadow: 0 0 4px #a855f7,0 0 8px #a855f7;
+    font-family: "Cinzel", serif;
 }
 form h3{
     font-family: "Cinzel", serif;
@@ -343,6 +358,7 @@ form label{
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 100%;
 }
 form input{
     color: purple;
@@ -476,6 +492,7 @@ footer{
 @media (max-width: 1100px) {
     .paylog{
         width: 100%;
+        min-width: 100%;
         padding: 0px 30px;
     }
     .section{
@@ -494,6 +511,7 @@ footer{
     }
     .paylog a{
         right: 40px;
+        top: 15px;
     }
 }
 @media (max-width: 768px) {
@@ -535,14 +553,11 @@ footer{
         display: none;
     }
     .paylog{
-        height: auto;
-        top: 55%;
-    }
-    .paylog a{
-        top: 36px;
+        top: 57%;
     }
     form{
-        flex: 0 0 100%;
+        width: 100%;
+        min-width: 100%;
         border-radius: 10px;
     }
 }
@@ -572,9 +587,9 @@ footer{
         font-size: 25px;
     }
 }
-@media (max-width: 350px){
-    form h3{
-        text-align: start;
+@media (max-width: 300px){
+    .paylog a{
+        right: 30px;
     }
 }
 @media (max-width: 250px) {
@@ -595,13 +610,13 @@ footer{
         display: flex;
     }
     .paylog a{
-        right: 13px;
+        right: 30px;
+    }
+    form h3{
+        font-size: 20px;
     }
 }
 @media (max-width: 200px) {
-    .paylog{
-        padding: 0px;
-    }
     form{
         padding: 40px 0px;
     }
