@@ -94,53 +94,15 @@
     AOS.init();
     </script>
 
-    <script src="script.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script>
+    emailjs.init({
+        publicKey: "hysNc4ps1cqxY5Fzm"
+    });
+    </script>
 
-<script>
-    emailjs.init("hysNc4ps1cqxY5Fzm");
-
-document.getElementById("contact-form").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const loader = document.getElementById("loader");
-  const sendBtn = document.getElementById("sendBtn");
-  const btnText = document.getElementById("btnText");
-
-  const params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value
-  };
-
-  loader.style.display = "block";
-  btnText.style.visibility = "hidden";
-  sendBtn.disabled = true;
-  sendBtn.style.opacity = "0.9"; //
-
-  Promise.all([
-    emailjs.send("service_ei634gg", "template_6xbznyv", params),
-    emailjs.send("service_ei634gg", "template_kqsw70w", params)
-  ])
-  .then(() => {
-    loader.style.display = "none";
-    btnText.style.visibility = "visible";
-    sendBtn.disabled = false;
-    sendBtn.style.cursor = "pointer"; // JS resets cursor
-    sendBtn.style.opacity = "1";
-    alert("🎉 Contact successful ✅");
-    document.getElementById("contact-form").reset();
-  })
-  .catch((error) => {
-    loader.style.display = "none";
-    btnText.style.visibility = "visible";
-    sendBtn.disabled = false;
-    sendBtn.style.opacity = "1";
-    alert("❌ Failed to send. Try again.");
-    console.log(error);
-  });
-});
-</script>
+    <script src="contact.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
