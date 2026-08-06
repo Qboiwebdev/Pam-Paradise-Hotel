@@ -1,8 +1,8 @@
 const menuBtn = document.getElementById("menuBtn");
 const navbar = document.getElementById("navbar");
-
 menuBtn.addEventListener("click", () => {
   navbar.classList.toggle("active");
+
   if (navbar.classList.contains("active")) {
     menuBtn.innerHTML = "⨉";
   } else {
@@ -103,6 +103,12 @@ function payWithPaystack(pricePerNight, i) {
             footer_message: ""
         };
         
+        alert(
+            "Payment Successful ✔️\nBooking Confirmed ✔️\nBooking Code: " +
+            bookingCode
+        );
+        goToDefault(i);
+
         Promise.all([
             emailjs.send(
                 "service_t2jayrh",
@@ -118,16 +124,15 @@ function payWithPaystack(pricePerNight, i) {
         ])
         
         .then(() => {
-            alert(
-                "Payment Successful ✔️\nBooking Confirmed ✔️\nBooking Code: " +
-                bookingCode
-            );
-            goToDefault(i);
+            alert("Email sent successfully.")
         })
         
         .catch((error) => {
-            console.log(error);
-            alert("Payment successful but email failed.");
+            console.log("status:", error.status)
+            console.log("Text:", error.text)
+            console.error("EmailJS Error: ", error);
+            alert("Payment was successful" +
+                "However, the confirmation email could not be sent.");
             goToDefault(i);
         });
     },
@@ -138,46 +143,6 @@ function payWithPaystack(pricePerNight, i) {
     }
 });
 handler.openIframe();
-}
-
-function sendRefundEmail() {
-    const customerParams = {
-        subject: "Refund Successful - Pam Paradise Hotel",
-        customer_email: email,
-        customer_name: name,
-        message: "Your refund has been successfully processed.",
-        booking_details: 
-        `Booking Code:${bookingCode}
-        Refund Amount:₦${total}
-        Payment Reference:${paymentReference}`,
-        footer_message: "The refund has been returned to your payment account."
-    };
-
-    const ownerParams = {
-        subject: "Refund Processed - Pam Paradise Hotel",
-        customer_name: name,
-        customer_email: email,
-        message: "A refund has been processed.",
-        booking_details: 
-        `Booking Code:${bookingCode}
-        Refund Amount:₦${total}
-        Payment Reference:${paymentReference}`,
-        footer_message: "Refund was successfully returned to the customer."
-    };
-
-    Promise.all([
-        emailjs.send(
-            "service_t2jayrh",
-            "template_kqsw70w",
-            customerParams
-        ),
-
-        emailjs.send(
-            "service_t2jayrh",
-            "template_6xbznyv",
-            ownerParams
-        )
-    ]);
 }
 
 const phone = "2348165803719";
@@ -234,6 +199,7 @@ searchInput.addEventListener("input", function () {
     let found = false;
     suggestions.innerHTML = "";
 
+    
     if (value === "") {
         rooms.forEach(room => {
             room.style.display = "";
